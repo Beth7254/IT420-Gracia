@@ -13,20 +13,21 @@ sender = "no-reply@pnb.com.ph"
 subject = "It's All About YOU Today - Warm Birthday Greetings from PNB"
 email_body = "Celebrate the gift of life with a gift from us. when you use your PNB Credit, Debit, or Prepaid Card!"
 
-print(title)
+
 print("Email")
+print(title)
 print()
 
-print(sender)
 print("Sender")
+print(sender)
 print()
 
-print(subject)
 print("Subject")
+print(subject)
 print()
 
-print(email_body)
 print("Body")
+print(email_body)
 print()
 
 
