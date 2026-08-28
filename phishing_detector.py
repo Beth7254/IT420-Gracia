@@ -30,7 +30,6 @@ print("Body")
 print(email_body)
 print()
 
-
 # Mission 3:
 # Detect suspicious words.
 
@@ -48,12 +47,26 @@ print()
 
 email_text = (subject + " " + email_body).lower()
 
+risk_score = 0
+
 for word in suspicious_words:
     if word in email_text:
         print("[!] " + word)
+        risk_score += 1
 
 # Mission 4:
 # Calculate the risk score.
+
+if risk_score <= 1:
+    risk_level = "LOW"
+elif risk_score <= 3:
+    risk_level = "MEDIUM"
+else:
+    risk_level = "HIGH"
+
+print()
+print("RISK SCORE:", risk_score)
+print("RISK LEVEL:", risk_level)
 
 # Mission 5:
 # Test multiple emails.
