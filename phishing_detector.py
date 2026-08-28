@@ -67,9 +67,43 @@ else:
 print()
 print("RISK SCORE:", risk_score)
 print("RISK LEVEL:", risk_level)
+print()
 
 # Mission 5:
 # Test multiple emails.
+
+print()
+print("MULTIPLE EMAIL CHECKER")
+
+print()
+emails = [
+    "Your account will expire today. Click here to verify your account immediately.",
+    "ITE 403 Week 5 Submission. Please review your submission before 3 PM.",
+    "Congratulations! You Won! You have won ₱50,000. Send your account information to claim your prize."
+]
+
+for email in emails:
+    score = 0
+
+    print("EMAIL")
+    print(email)
+
+    for word in suspicious_words:
+        if word in email.lower():
+            print("[!] " + word)
+            score += 1
+
+    print("RISK SCORE:", score)
+
+    if score <= 1:
+        print("RISK LEVEL: LOW")
+    elif score <= 3:
+        print("RISK LEVEL: MEDIUM")
+    else:
+        print("RISK LEVEL: HIGH")
+
+    print()
+
 
 # Mission 6:
 # Add spear-phishing indicators.
