@@ -6,16 +6,16 @@ sender = ""
 subject = ""
 email_body = ""
 
+
 # Mission 2:
 # Display the email information.
-title= ""
+
+print()
 sender = "no-reply@pnb.com.ph"
 subject = "It's All About YOU Today - Warm Birthday Greetings from PNB"
 email_body = "Celebrate the gift of life with a gift from us. when you use your PNB Credit, Debit, or Prepaid Card!"
 
-
-print("Email")
-print(title)
+print("Email for Today!")
 print()
 
 print("Sender")
@@ -30,8 +30,11 @@ print("Body")
 print(email_body)
 print()
 
+
 # Mission 3:
 # Detect suspicious words.
+
+print("SUSPICIOUS INDICATORS")
 
 suspicious_words = [
     "urgent",
@@ -42,20 +45,25 @@ suspicious_words = [
     "immediately"
 ]
 
-print("SUSPICIOUS INDICATORS")
 print()
 
 email_text = (subject + " " + email_body).lower()
-
 risk_score = 0
+
+print()
 
 for word in suspicious_words:
     if word in email_text:
         print("[!] " + word)
         risk_score += 1
 
+print()
+
+
 # Mission 4:
 # Calculate the risk score.
+
+print("RISK SCORE")
 
 if risk_score <= 1:
     risk_level = "LOW"
@@ -65,17 +73,21 @@ else:
     risk_level = "HIGH"
 
 print()
+
 print("RISK SCORE:", risk_score)
 print("RISK LEVEL:", risk_level)
 print()
+
 
 # Mission 5:
 # Test multiple emails.
 
 print()
+
 print("MULTIPLE EMAIL CHECKER")
 
 print()
+
 emails = [
     "Your account will expire today. Click here to verify your account immediately.",
     "ITE 403 Week 5 Submission. Please review your submission before 3 PM.",
@@ -115,7 +127,7 @@ I'm checking the submissions for our ITE 403 class.
 Your Week 5 activity appears to be missing from the submission list.
 Please review your submission here:
 
-[LINK]
+[LINKNI SIYA]
 
 I need to finalize the grades today.
 
@@ -133,12 +145,46 @@ if "alvin" in targeted_text:
     print("[!] Name")
 
 if "today" in targeted_text:
-    print("[!] Deadline ata?")
-    
+    print("[!] DeadlineNi?")
+
 print()
+
 
 # Mission 7:
 # Add at least three new detection rules.
+
+print("IMPROVED PHISHING DETECTOR")
+
+score = 0
+
+new_rules = [
+    "account information",
+    "[link]",
+    "won"
+]
+
+for rule in new_rules:
+    if rule in targeted_text:
+        print("[!] " + rule)
+        score += 1
+
+for word in suspicious_words:
+    if word in targeted_text:
+        print("[!] " + word)
+        score += 1
+
+print("RISK SCORE:", score)
+
+if score <= 1:
+    print("RISK LEVEL: LOW")
+    print("RECOMMENDATION: Email appears low risk, but stay careful.")
+elif score <= 3:
+    print("RISK LEVEL: MEDIUM")
+    print("RECOMMENDATION: Be careful and verify the sender.")
+else:
+    print("RISK LEVEL: HIGH")
+    print("RECOMMENDATION: Do not click links or provide information.")
+
 
 # Final Mission:
 # Produce a Security Analyst Report.
