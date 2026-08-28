@@ -108,6 +108,35 @@ for email in emails:
 # Mission 6:
 # Add spear-phishing indicators.
 
+targeted_email = """
+Hi Alvin,
+
+I'm checking the submissions for our ITE 403 class.
+Your Week 5 activity appears to be missing from the submission list.
+Please review your submission here:
+
+[LINK]
+
+I need to finalize the grades today.
+
+Thank you,
+
+Dr. Maria Santos
+"""
+
+print("SPEAR-PHISHING ANALYSIS")
+print()
+
+targeted_text = targeted_email.lower()
+
+if "alvin" in targeted_text:
+    print("[!] Name")
+
+if "today" in targeted_text:
+    print("[!] Deadline ata?")
+    
+print()
+
 # Mission 7:
 # Add at least three new detection rules.
 
