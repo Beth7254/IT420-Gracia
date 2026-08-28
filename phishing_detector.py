@@ -34,6 +34,24 @@ print()
 # Mission 3:
 # Detect suspicious words.
 
+suspicious_words = [
+    "urgent",
+    "verify",
+    "password",
+    "click",
+    "suspended",
+    "immediately"
+]
+
+print("SUSPICIOUS INDICATORS")
+print()
+
+email_text = (subject + " " + email_body).lower()
+
+for word in suspicious_words:
+    if word in email_text:
+        print("[!] " + word)
+
 # Mission 4:
 # Calculate the risk score.
 
