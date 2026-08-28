@@ -167,7 +167,7 @@ for rule in new_rules:
     if rule in targeted_text:
         print("[!] " + rule)
         score += 1
-
+        
 for word in suspicious_words:
     if word in targeted_text:
         print("[!] " + word)
@@ -188,3 +188,76 @@ else:
 
 # Final Mission:
 # Produce a Security Analyst Report.
+
+print()
+print("====================================")
+print("       PHISHING EMAIL DETECTOR")
+print("====================================")
+
+sender = "maria.santos@school-example.com"
+
+subject = "Important: Missing ITE 403 Activity"
+
+email_body = """
+Hi Alvin,
+
+Your ITE 403 Week 5 activity is missing.
+Please click the link to verify your account immediately.
+
+[link ni]
+
+I need to check your submission today.
+
+Thank you,
+Dr. Maria Santos
+"""
+
+email_text = (subject + " " + email_body).lower()
+
+score = 0
+
+print()
+print("Sender:")
+print(sender)
+
+print()
+print("Subject:")
+print(subject)
+
+print()
+print("INDICATORS FOUND")
+print("------------------------------------")
+
+for word in suspicious_words:
+    if word in email_text:
+        print("[!] " + word)
+        score += 1
+
+for rule in new_rules:
+    if rule in email_text:
+        print("[!] " + rule)
+        score += 1
+
+print()
+print("RISK SCORE:", score)
+
+if score <= 1:
+    print("RISK LEVEL: LOW")
+elif score <= 3:
+    print("RISK LEVEL: MEDIUM")
+else:
+    print("RISK LEVEL: HIGH")
+
+print()
+
+if "alvin" in email_text:
+    print("POSSIBLE ATTACK: Spear Phishing")
+else:
+    print("POSSIBLE ATTACK: Phishing")
+
+print()
+print("RECOMMENDATION:")
+print("Do not click the link. Verify the sender first.")
+
+print()
+print("====================================")
